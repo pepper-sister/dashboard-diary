@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>일기 상세페이지</title>
+        <link rel="stylesheet" href="./css/detail.css" />
+        <script src="./javascript/detail.js"></script>
+    </head>
+    <body>
+        <div class="CSS_상세_레이아웃">
+            <!-- 헤더 -->
+            <div class="CSS_상세_헤더">민지의 다이어리</div>
+
+            <div class="CSS_상세_메인">
+                <!-- 일기 표시 -->
+                <div class="CSS_상세_일기">
+                    <div class="CSS_상세_제목영역">
+                        <div class="CSS_상세_메인제목">
+                            <div
+                                id="HTML_상세_제목"
+                                class="CSS_상세_제목"
+                            ></div>
+                        </div>
+                        <div class="CSS_상세_서브제목">
+                            <div class="CSS_상세_기분">
+                                <div id="HTML_상세_이미지"></div>
+                                <div id="HTML_상세_기분"></div>
+                            </div>
+                            <div class="CSS_상세_작성일">
+                                <div id="HTML_상세_날짜"></div>
+                                <div>작성</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="CSS_상세_내용">
+                        <div class="CSS_상세내용_제목">내용</div>
+                        <div
+                            id="HTML_상세_내용"
+                            class="CSS_상세내용_내용"
+                        ></div>
+                    </div>
+                    <div class="CSS_상세_버튼그룹">
+                        <button
+                            class="CSS_상세_수정"
+                            onclick="JS_일기수정하러가기()"
+                        >
+                            수정
+                        </button>
+                        <button
+                            class="CSS_상세_삭제"
+                            onclick="JS_일기삭제(event)"
+                        >
+                            삭제
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 회고 -->
+                <div class="CSS_회고">
+                    <div class="CSS_회고_입력영역">
+                        <div class="CSS_회고_제목">회고</div>
+                        <div class="CSS_회고_입력">
+                            <input
+                                type="text"
+                                id="HTML_회고_인풋창"
+                                class="CSS_회고_인풋창"
+                                placeholder="회고를 남겨보세요."
+                            />
+                            <button
+                                class="CSS_회고_버튼"
+                                onclick="JS_회고입력()"
+                            >
+                                입력
+                            </button>
+                        </div>
+                    </div>
+                    <div id="HTML_회고영역" class="CSS_회고_댓글영역">
+                        <div id="HTML_회고"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
