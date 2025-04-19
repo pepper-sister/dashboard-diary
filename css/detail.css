@@ -1,0 +1,240 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0 20px 40px;
+}
+
+.CSS_상세_레이아웃 {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+    padding: 0 20px;
+}
+
+/* 헤더 */
+.CSS_상세_헤더 {
+    height: 60px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 60px;
+}
+
+.CSS_상세_메인 {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* 일기 표시 */
+.CSS_상세_일기 {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #000000;
+}
+
+.CSS_상세_제목영역 {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.CSS_상세_메인제목 {
+    padding-bottom: 12px;
+    border-bottom: 2px solid #000000;
+}
+
+.CSS_상세_제목 {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.CSS_상세_서브제목 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.CSS_상세_기분 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+.CSS_상세_이미지 {
+    width: 32px;
+    height: 32px;
+}
+
+.CSS_행복 {
+    color: #ea5757;
+}
+
+.CSS_슬픔 {
+    color: #28b4e1;
+}
+
+.CSS_놀람 {
+    color: #d59029;
+}
+
+.CSS_화남 {
+    color: #777777;
+}
+
+.CSS_기타 {
+    color: #a229ed;
+}
+
+.CSS_상세_작성일 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #919191;
+}
+
+.CSS_상세_내용 {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.CSS_상세내용_제목 {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+}
+
+.CSS_상세내용_내용 {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    color: #333333;
+}
+
+.CSS_상세_버튼그룹 {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    gap: 16px;
+}
+
+.CSS_상세_수정 {
+    padding: 8px 10px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    border: 1px solid #d4d3d3;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 24px;
+    cursor: pointer;
+}
+
+.CSS_상세_삭제 {
+    padding: 8px 10px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    border: 1px solid #d4d3d3;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 24px;
+    cursor: pointer;
+}
+
+/* 회고 */
+.CSS_회고 {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.CSS_회고_입력영역 {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.CSS_회고_제목 {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+.CSS_회고_입력 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.CSS_회고_인풋창 {
+    flex-grow: 1;
+    border-radius: 8px;
+    padding: 12px 16px;
+    border: 1px solid #d4d3d3;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+.CSS_회고_인풋창::placeholder {
+    color: #ababab;
+}
+
+.CSS_회고_버튼 {
+    border-radius: 8px;
+    padding: 8px 10px;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+    color: #ffffff;
+    background-color: #000000;
+    border: none;
+    cursor: pointer;
+}
+
+.CSS_회고_댓글영역 {
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    scroll-behavior: smooth;
+}
+
+.CSS_회고_댓글 {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+}
+
+.CSS_회고_댓글내용 {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+.CSS_회고_댓글작성일 {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #777777;
+}
+
+.CSS_회고_div {
+    border-top: 1px solid #e4e4e4;
+    margin: 12px 0;
+}
