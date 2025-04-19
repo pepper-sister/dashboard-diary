@@ -1,0 +1,235 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0 20px 40px;
+}
+
+.CSS_수정_레이아웃 {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+    padding: 0 20px;
+}
+
+/* 헤더 */
+.CSS_수정_헤더 {
+    height: 60px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 60px;
+}
+
+.CSS_수정_메인 {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* 일기 표시 */
+.CSS_수정_일기 {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding-bottom: 16px;
+}
+
+.CSS_수정_기분영역 {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.CSS_수정_기분 {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+.CSS_수정_라디오그룹 {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.CSS_수정_라디오 {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 22px;
+}
+
+.CSS_수정_라디오 input[type='radio'] {
+    width: 20px;
+    height: 20px;
+}
+
+.CSS_수정_제목영역 {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.CSS_수정_제목,
+.CSS_수정_내용 {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    color: #333333;
+}
+
+.CSS_수정_제목입력 {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #d4d3d3;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+.CSS_수정_내용영역 {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.CSS_수정_내용입력 {
+    width: 100%;
+    height: 128px;
+    padding: 12px 16px;
+    border: 1px solid #d4d3d3;
+    border-radius: 8px;
+    resize: none;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+.CSS_수정_버튼영역 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 16px;
+}
+
+.CSS_수정_취소 {
+    width: 104px;
+    height: 48px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #000000;
+    background-color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+    color: #1c1c1c;
+    cursor: pointer;
+}
+
+.CSS_수정_수정 {
+    width: 104px;
+    height: 48px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: none;
+    background-color: #000000;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+    color: #f2f2f2;
+    cursor: pointer;
+}
+
+.CSS_수정_수정:hover {
+    transform: skewX(-10deg);
+}
+
+/* 회고 */
+.CSS_회고 {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.CSS_회고_입력영역 {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.CSS_회고_제목 {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+.CSS_회고_입력 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.CSS_수정_회고_인풋창 {
+    flex-grow: 1;
+    border-radius: 8px;
+    padding: 12px 16px;
+    border: 1px solid #d4d3d3;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    background-color: #f2f2f2;
+}
+
+.CSS_회고_인풋창::placeholder {
+    color: #ababab;
+}
+
+.CSS_수정_회고_버튼 {
+    border-radius: 8px;
+    padding: 8px 10px;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+    color: #f2f2f2;
+    background-color: #c7c7c7;
+    border: none;
+    cursor: pointer;
+}
+
+.CSS_회고_댓글영역 {
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    scroll-behavior: smooth;
+}
+
+.CSS_회고_댓글 {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+}
+
+.CSS_회고_댓글내용 {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+.CSS_회고_댓글작성일 {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #777777;
+}
+
+.CSS_회고_div {
+    border-top: 1px solid #e4e4e4;
+    margin: 12px 0;
+}
