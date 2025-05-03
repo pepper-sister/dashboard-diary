@@ -134,7 +134,7 @@ const JS_일기등록 = () => {
     };
 
     // 로컬스토리지에서 일기목록 가져오기
-    const 스토리지일기목록 = window.localStorage.getItem('일기목록') ?? [];
+    const 스토리지일기목록 = window.localStorage.getItem('일기목록') ?? '[]';
     const 일기목록 = JSON.parse(스토리지일기목록);
 
     // 일기목록에 일기 추가
