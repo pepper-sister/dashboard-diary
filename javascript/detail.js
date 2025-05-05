@@ -165,9 +165,6 @@ const JS_회고입력 = () => {
 
 // 일기 삭제 기능
 const JS_일기삭제 = (event) => {
-    // 이벤트버블링 막기
-    event.preventDefault();
-
     // 쿼리스트링으로 일기번호 받기
     const 쿼리스트링 = location.search;
     const 잘게나눔 = new URLSearchParams(쿼리스트링);
@@ -179,6 +176,9 @@ const JS_일기삭제 = (event) => {
 
     // 일기목록에서 현재 일기번호 객체 제거
     일기목록.splice(일기번호, 1);
+
+    // 일기 삭제완료 알림
+    alert('삭제되었습니다.');
 
     // 일기목록 갱신, 홈페이지로 이동
     window.localStorage.setItem('일기목록', JSON.stringify(일기목록));
