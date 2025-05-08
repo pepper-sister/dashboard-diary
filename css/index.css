@@ -318,13 +318,19 @@ body {
 }
 
 /* 플로팅 버튼 */
+.CSS_플로팅버튼영역 {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+}
 .CSS_플로팅버튼 {
     width: 40px;
     height: 40px;
-    position: fixed;
-    right: 40px;
-    bottom: 40px;
     cursor: pointer;
+    background-color: #ffffffe5;
+    opacity: 90%;
+    border: 1px solid #f2f2f2;
+    border-radius: 100%;
 }
 
 /* 푸터 */
