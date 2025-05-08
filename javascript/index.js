@@ -158,6 +158,23 @@ window.addEventListener('scroll', () => {
     } else {
         document.getElementById('HTML_필터').style = '';
     }
+
+    // 푸터 위쪽으로 플로팅 버튼 두기
+    const 현재화면과푸터사이길이 = document
+        .getElementById('HTML_푸터')
+        .getBoundingClientRect().top;
+    const 현재화면높이 = window.innerHeight;
+
+    if (현재화면높이 >= 현재화면과푸터사이길이) {
+        document.getElementById('HTML_플로팅버튼').style = `position: relative;
+            left: 86%;
+            top: 0px;
+            margin-top: -40px;`;
+    } else {
+        document.getElementById('HTML_플로팅버튼').style = `position: fixed;
+            left: 86%;
+            bottom: 40px;`;
+    }
 });
 
 // 스크롤 이동 기능
