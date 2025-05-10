@@ -64,10 +64,20 @@ body {
     padding: 12px 8px;
 }
 
-/* 일기 기분 필터링 */
-.CSS_필터영역 {
+.CSS_필터_일기작성_영역 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     margin-top: -10px;
     margin-bottom: 32px;
+}
+
+/* 일기 기분 필터링 */
+.CSS_필터영역 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     position: sticky;
     top: 0;
     z-index: 2;
@@ -78,13 +88,19 @@ body {
     border-radius: 8px;
     border: 1px solid #c7c7c7;
     padding: 4px;
+    cursor: pointer;
 }
 
 .CSS_일기장 {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 24px;
     max-width: 1170px;
+}
+
+.CSS_일기보기 {
+    display: flex;
+    flex-direction: column;
 }
 
 /* 일기 목록 */
@@ -93,6 +109,7 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 24px;
+    min-height: 250px;
 }
 
 .CSS_일기_이동 {
@@ -104,8 +121,8 @@ body {
     flex-direction: column;
     gap: 16px;
     padding-bottom: 16px;
-    max-width: 380px;
-    height: 373px;
+    width: 274px;
+    height: 296px;
     cursor: pointer;
 }
 
@@ -120,7 +137,9 @@ body {
 }
 
 .CSS_일기_이미지 {
-    height: 285px;
+    height: 208px;
+    object-fit: cover;
+    border-radius: 16px;
 }
 
 .CSS_일기_정보 {
@@ -185,24 +204,43 @@ body {
     width: 24px;
     height: 24px;
     position: absolute;
-    top: -300px;
-    left: 352px;
+    top: -220px;
+    left: 245px;
     z-index: 1;
     cursor: pointer;
 }
 
 /* 일기 쓰기 */
+.CSS_일기작성_영역 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    display: none;
+    position: fixed;
+    z-index: 3;
+}
+
+.CSS_모달_배경 {
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    opacity: 50%;
+}
+
 .CSS_일기작성 {
     display: flex;
     flex-direction: column;
     gap: 40px;
     padding: 24px;
-    min-width: 360px;
-    max-width: 760px;
-    max-height: 604px;
-    margin-top: 50px;
+    width: 640px;
+    height: 560px;
     border-radius: 16px;
     border: 1px solid #d4d3d3;
+    background-color: #ffffff;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .CSS_일기작성_제목 {
@@ -223,9 +261,10 @@ body {
     gap: 16px;
 }
 
-.CSS_일기작성_제목 {
-    font-size: 24px;
+.CSS_일기작성_기분제목 {
+    font-size: 20px;
     font-weight: 600;
+    line-height: 24px;
 }
 
 .CSS_기분_선택그룹 {
@@ -303,8 +342,31 @@ body {
     color: #ababab;
 }
 
+.CSS_일기작성_버튼 {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 16px;
+}
+
+.CSS_등록닫기 {
+    width: 104px;
+    height: 48px;
+    border-radius: 8px;
+    border: 1px solid #000000;
+    padding: 8px 10px;
+    background-color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+    color: #1c1c1c;
+    cursor: pointer;
+}
+
 /* 일기 등록 */
 .CSS_일기등록 {
+    width: 104px;
     height: 48px;
     border-radius: 8px;
     border: none;
@@ -314,6 +376,234 @@ body {
     font-weight: 600;
     line-height: 24px;
     color: #f2f2f2;
+}
+
+.CSS_일기작성_모달버튼 {
+    width: 110px;
+    padding: 8px 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: #000000;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+/* 일기 등록완료 모달 */
+.CSS_등록완료모달영역 {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 4;
+    display: none;
+}
+
+.CSS_등록완료모달 {
+    width: 480px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 24px;
+    padding: 24px;
+    gap: 40px;
+    background-color: #ffffff;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.CSS_등록완료_내용 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.CSS_등록완료_제목 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.CSS_등록완료_설명 {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24px;
+    color: #333333;
+}
+
+.CSS_등록완료_버튼 {
+    width: 100%;
+    height: 48px;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 10px;
+    background-color: #000000;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+/* 일기 등록취소 모달 */
+.CSS_등록취소모달영역 {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 4;
+    display: none;
+}
+
+.CSS_등록취소모달 {
+    width: 480px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 24px;
+    padding: 24px;
+    gap: 40px;
+    background-color: #ffffff;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.CSS_등록취소_내용 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.CSS_등록취소_제목 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.CSS_등록취소_설명 {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24px;
+    color: #333333;
+}
+
+.CSS_등록취소_버튼영역 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 21px;
+}
+
+.CSS_계속작성_버튼 {
+    width: 104px;
+    height: 48px;
+    border: 1px solid #000000;
+    border-radius: 8px;
+    padding: 8px 10px;
+    background-color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+    color: #1c1c1c;
+    cursor: pointer;
+}
+
+.CSS_등록취소_버튼 {
+    width: 104px;
+    height: 48px;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 10px;
+    background-color: #000000;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+/* 일기 삭제 모달 */
+.CSS_일기삭제모달영역 {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 4;
+    display: none;
+}
+
+.CSS_일기삭제모달 {
+    width: 480px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 24px;
+    padding: 24px;
+    gap: 40px;
+    background-color: #ffffff;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.CSS_일기삭제_내용 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.CSS_일기삭제_제목 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.CSS_일기삭제_설명 {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24px;
+    color: #333333;
+}
+
+.CSS_일기삭제_버튼영역 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 21px;
+}
+
+.CSS_취소_버튼 {
+    width: 104px;
+    height: 48px;
+    border: 1px solid #000000;
+    border-radius: 8px;
+    padding: 8px 10px;
+    background-color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+    color: #1c1c1c;
+    cursor: pointer;
+}
+
+.CSS_삭제_버튼 {
+    width: 104px;
+    height: 48px;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 10px;
+    background-color: #000000;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+    color: #ffffff;
     cursor: pointer;
 }
 
@@ -323,6 +613,7 @@ body {
     display: flex;
     justify-content: start;
 }
+
 .CSS_플로팅버튼 {
     width: 40px;
     height: 40px;
@@ -331,6 +622,9 @@ body {
     opacity: 90%;
     border: 1px solid #f2f2f2;
     border-radius: 100%;
+    position: fixed;
+    left: 86%;
+    bottom: 40px;
 }
 
 /* 푸터 */
@@ -366,43 +660,171 @@ body {
         width: 320px;
     }
 
-    .CSS_일기탭 {
-        order: 0;
-    }
-
-    .CSS_일기장 {
-        flex-direction: column;
-        order: 1;
-    }
-
-    .CSS_일기보기 {
-        order: 3;
-    }
-
-    .CSS_일기작성 {
-        min-width: 320px;
-        max-width: 320px;
-        margin-top: 0;
-        order: 2;
-    }
-
-    .CSS_필터영역 {
-        order: 4;
-    }
-
     .CSS_일기_목록 {
         display: grid;
         grid-template-columns: 148px 148px;
         order: 5;
     }
 
-    .CSS_일기_이미지 {
-        object-fit: cover;
-        border-radius: 16px;
+    .CSS_일기 {
+        width: 148px;
+        cursor: pointer;
     }
 
     .CSS_일기_삭제 {
-        top: -300px;
+        top: -220px;
         left: 120px;
+    }
+
+    .CSS_일기작성 {
+        gap: 24px;
+        width: 320px;
+        height: 480px;
+        overflow: scroll;
+    }
+
+    .CSS_일기작성_제목 {
+        font-size: 20px;
+        line-height: 24px;
+    }
+
+    .CSS_일기작성_기분제목 {
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .CSS_기분_선택그룹 {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .CSS_기분_선택 {
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .CSS_일기작성_내용 {
+        gap: 24px;
+    }
+
+    .CSS_일기작성_입력 {
+        gap: 16px;
+    }
+
+    .CSS_입력_제목 {
+        font-size: 12px;
+        line-height: 16px;
+    }
+
+    .CSS_등록닫기 {
+        width: 80px;
+        height: 40px;
+        padding: 8px 12px;
+        font-size: 16px;
+    }
+
+    .CSS_일기등록 {
+        width: 80px;
+        height: 40px;
+        padding: 8px 12px;
+        font-size: 16px;
+    }
+
+    .CSS_등록완료모달 {
+        width: 320px;
+        height: 156px;
+        gap: 24px;
+    }
+
+    .CSS_등록완료_내용 {
+        gap: 8px;
+    }
+
+    .CSS_등록완료_제목 {
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .CSS_등록완료_설명 {
+        font-size: 14px;
+        line-height: 16px;
+    }
+
+    .CSS_등록완료_버튼 {
+        height: 40px;
+        padding: 8px 12px;
+        font-size: 16px;
+    }
+
+    .CSS_등록취소모달 {
+        width: 320px;
+        height: 156px;
+        gap: 24px;
+    }
+
+    .CSS_등록취소_내용 {
+        gap: 8px;
+    }
+
+    .CSS_등록취소_제목 {
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .CSS_등록취소_설명 {
+        font-size: 14px;
+        line-height: 16px;
+    }
+
+    .CSS_등록취소_버튼영역 {
+        gap: 16px;
+    }
+
+    .CSS_계속작성_버튼 {
+        height: 40px;
+        padding: 8px 12px;
+        font-size: 16px;
+    }
+
+    .CSS_등록취소_버튼 {
+        height: 40px;
+        padding: 8px 12px;
+        font-size: 16px;
+    }
+
+    .CSS_일기삭제모달 {
+        width: 320px;
+        height: 156px;
+        gap: 24px;
+    }
+
+    .CSS_일기삭제_내용 {
+        gap: 8px;
+    }
+
+    .CSS_일기삭제_제목 {
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .CSS_일기삭제_설명 {
+        font-size: 14px;
+        line-height: 16px;
+    }
+
+    .CSS_일기삭제_버튼영역 {
+        gap: 16px;
+    }
+
+    .CSS_취소_버튼 {
+        height: 40px;
+        padding: 8px 12px;
+        font-size: 16px;
+    }
+
+    .CSS_삭제_버튼 {
+        height: 40px;
+        padding: 8px 12px;
+        font-size: 16px;
     }
 }
