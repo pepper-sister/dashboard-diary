@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="./css/index.css" />
         <script src="./javascript/index.js"></script>
     </head>
-    <body>
+    <body id="HTML_바디">
         <div class="CSS_일기_레이아웃">
             <!-- 헤더 -->
             <div class="CSS_일기_헤더">민지의 다이어리</div>
@@ -23,106 +23,188 @@
 
                 <div class="CSS_일기장">
                     <div class="CSS_일기보기">
-                        <!-- 일기 기분 필터링 -->
-                        <div class="CSS_필터영역">
-                            <select id="HTML_필터" class="CSS_필터">
-                                <option selected>전체</option>
-                                <option>행복해요</option>
-                                <option>슬퍼요</option>
-                                <option>놀랐어요</option>
-                                <option>화나요</option>
-                                <option>기타</option>
-                            </select>
+                        <div class="CSS_필터_일기작성_영역">
+                            <div class="CSS_필터영역">
+                                <!-- 일기 기분 필터링 -->
+                                <select id="HTML_필터" class="CSS_필터">
+                                    <option selected>전체</option>
+                                    <option>행복해요</option>
+                                    <option>슬퍼요</option>
+                                    <option>놀랐어요</option>
+                                    <option>화나요</option>
+                                    <option>기타</option>
+                                </select>
+                            </div>
+                            <!-- 일기 쓰기 -->
+                            <button
+                                class="CSS_일기작성_모달버튼"
+                                onclick="JS_모달열기기능()"
+                            >
+                                + 일기쓰기
+                            </button>
                         </div>
 
                         <!-- 일기 목록 -->
                         <div id="HTML_일기목록" class="CSS_일기_목록"></div>
                     </div>
+                </div>
+            </div>
+        </div>
 
-                    <!-- 일기 쓰기 -->
-                    <div class="CSS_일기작성">
-                        <div class="CSS_일기작성_제목">📍 일기 쓰기</div>
+        <div id="HTML_일기작성" class="CSS_일기작성_영역">
+            <div class="CSS_모달_배경" onclick="JS_등록취소기능()"></div>
+            <div class="CSS_일기작성">
+                <div class="CSS_일기작성_제목">일기 쓰기</div>
 
-                        <div class="CSS_일기작성_내용">
-                            <!-- 기분 선택 -->
-                            <div class="CSS_일기작성_기분">
-                                <div class="CSS_일기작성_제목">
-                                    오늘 기분은 어땠나요?
-                                </div>
-                                <div class="CSS_기분_선택그룹">
-                                    <div class="CSS_기분_선택">
-                                        <input
-                                            type="radio"
-                                            name="HTML_기분"
-                                            value="행복"
-                                            checked
-                                        />
-                                        <div>행복해요</div>
-                                    </div>
-                                    <div class="CSS_기분_선택">
-                                        <input
-                                            type="radio"
-                                            name="HTML_기분"
-                                            value="슬픔"
-                                        />
-                                        <div>슬퍼요</div>
-                                    </div>
-                                    <div class="CSS_기분_선택">
-                                        <input
-                                            type="radio"
-                                            name="HTML_기분"
-                                            value="놀람"
-                                        />
-                                        <div>놀랐어요</div>
-                                    </div>
-                                    <div class="CSS_기분_선택">
-                                        <input
-                                            type="radio"
-                                            name="HTML_기분"
-                                            value="화남"
-                                        />
-                                        <div>화나요</div>
-                                    </div>
-                                    <div class="CSS_기분_선택">
-                                        <input
-                                            type="radio"
-                                            name="HTML_기분"
-                                            value="기타"
-                                        />
-                                        <div>기타</div>
-                                    </div>
-                                </div>
+                <div class="CSS_일기작성_내용">
+                    <!-- 기분 선택 -->
+                    <div class="CSS_일기작성_기분">
+                        <div class="CSS_일기작성_기분제목">
+                            오늘 기분은 어땠나요?
+                        </div>
+                        <div class="CSS_기분_선택그룹">
+                            <div class="CSS_기분_선택">
+                                <input
+                                    type="radio"
+                                    name="HTML_기분"
+                                    value="행복"
+                                    checked
+                                />
+                                <div>행복해요</div>
                             </div>
-
-                            <div class="CSS_일기작성_입력">
-                                <!-- 제목 입력 -->
-                                <div class="CSS_입력_제목영역">
-                                    <div class="CSS_입력_제목">제목</div>
-                                    <input
-                                        type="text"
-                                        id="HTML_제목_인풋창"
-                                        class="CSS_제목_인풋창"
-                                        placeholder="제목을 입력해 주세요."
-                                    />
-                                </div>
-
-                                <!-- 내용 입력 -->
-                                <div class="CSS_입력_내용영역">
-                                    <div class="CSS_입력_제목">내용</div>
-                                    <textarea
-                                        id="HTML_내용_인풋창"
-                                        class="CSS_내용_인풋창"
-                                        placeholder="내용을 입력해 주세요."
-                                    ></textarea>
-                                </div>
+                            <div class="CSS_기분_선택">
+                                <input
+                                    type="radio"
+                                    name="HTML_기분"
+                                    value="슬픔"
+                                />
+                                <div>슬퍼요</div>
+                            </div>
+                            <div class="CSS_기분_선택">
+                                <input
+                                    type="radio"
+                                    name="HTML_기분"
+                                    value="놀람"
+                                />
+                                <div>놀랐어요</div>
+                            </div>
+                            <div class="CSS_기분_선택">
+                                <input
+                                    type="radio"
+                                    name="HTML_기분"
+                                    value="화남"
+                                />
+                                <div>화나요</div>
+                            </div>
+                            <div class="CSS_기분_선택">
+                                <input
+                                    type="radio"
+                                    name="HTML_기분"
+                                    value="기타"
+                                />
+                                <div>기타</div>
                             </div>
                         </div>
-
-                        <!-- 일기 등록 -->
-                        <button class="CSS_일기등록" onclick="JS_일기등록()">
-                            등록하기
-                        </button>
                     </div>
+
+                    <div class="CSS_일기작성_입력">
+                        <!-- 제목 입력 -->
+                        <div class="CSS_입력_제목영역">
+                            <div class="CSS_입력_제목">제목</div>
+                            <input
+                                type="text"
+                                id="HTML_제목_인풋창"
+                                class="CSS_제목_인풋창"
+                                placeholder="제목을 입력해 주세요."
+                            />
+                        </div>
+
+                        <!-- 내용 입력 -->
+                        <div class="CSS_입력_내용영역">
+                            <div class="CSS_입력_제목">내용</div>
+                            <textarea
+                                id="HTML_내용_인풋창"
+                                class="CSS_내용_인풋창"
+                                placeholder="내용을 입력해 주세요."
+                            ></textarea>
+                        </div>
+                    </div>
+                </div>
+                <!-- 일기 작성 버튼 -->
+                <div class="CSS_일기작성_버튼">
+                    <button class="CSS_등록닫기" onclick="JS_닫기기능()">
+                        닫기
+                    </button>
+                    <button
+                        id="HTML_일기등록"
+                        class="CSS_일기등록"
+                        onclick="JS_일기등록()"
+                    >
+                        등록하기
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 일기등록완료 모달 -->
+        <div id="HTML_등록완료모달" class="CSS_등록완료모달영역">
+            <div class="CSS_모달_배경"></div>
+            <div class="CSS_등록완료모달">
+                <div class="CSS_등록완료_내용">
+                    <div class="CSS_등록완료_제목">일기 등록 완료</div>
+                    <div class="CSS_등록완료_설명">등록이 완료되었습니다.</div>
+                </div>
+                <button
+                    class="CSS_등록완료_버튼"
+                    onclick="JS_등록완료모달닫기기능()"
+                >
+                    확인
+                </button>
+            </div>
+        </div>
+
+        <!-- 일기등록취소 모달 -->
+        <div id="HTML_등록취소모달" class="CSS_등록취소모달영역">
+            <div class="CSS_모달_배경"></div>
+            <div class="CSS_등록취소모달">
+                <div class="CSS_등록취소_내용">
+                    <div class="CSS_등록취소_제목">일기 등록 취소</div>
+                    <div class="CSS_등록취소_설명">
+                        일기 등록을 취소하시겠어요?
+                    </div>
+                </div>
+                <div class="CSS_등록취소_버튼영역">
+                    <button
+                        class="CSS_계속작성_버튼"
+                        onclick="JS_계속작성기능()"
+                    >
+                        계속 작성
+                    </button>
+                    <button
+                        class="CSS_등록취소_버튼"
+                        onclick="JS_등록취소기능()"
+                    >
+                        등록 취소
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 일기삭제 모달 -->
+        <div id="HTML_일기삭제모달" class="CSS_일기삭제모달영역">
+            <div class="CSS_모달_배경"></div>
+            <div class="CSS_일기삭제모달">
+                <div class="CSS_일기삭제_내용">
+                    <div class="CSS_일기삭제_제목">일기 삭제</div>
+                    <div class="CSS_일기삭제_설명">일기를 삭제 하시겠어요?</div>
+                </div>
+                <div class="CSS_일기삭제_버튼영역">
+                    <button class="CSS_취소_버튼" onclick="JS_삭제취소기능()">
+                        취소
+                    </button>
+                    <button class="CSS_삭제_버튼" onclick="JS_일기삭제()">
+                        삭제
+                    </button>
                 </div>
             </div>
         </div>
