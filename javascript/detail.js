@@ -81,6 +81,17 @@ window.onload = () => {
     }
 };
 
+// 일기 내용 복사하는 기능
+const JS_내용복사기능 = () => {
+    const 내용 = document.getElementById('HTML_상세_내용').innerText;
+    navigator.clipboard.writeText(내용);
+
+    document.getElementById('HTML_토스트').style = 'display: block';
+    setTimeout(() => {
+        document.getElementById('HTML_토스트').style = 'display: none';
+    }, 3000);
+};
+
 // 일기 수정하러가는 기능
 const JS_일기수정하러가기 = () => {
     // 쿼리스트링으로 일기번호 받기
@@ -164,7 +175,7 @@ const JS_회고입력 = () => {
 };
 
 // 일기 삭제 기능
-const JS_일기삭제 = (event) => {
+const JS_일기삭제 = () => {
     // 쿼리스트링으로 일기번호 받기
     const 쿼리스트링 = location.search;
     const 잘게나눔 = new URLSearchParams(쿼리스트링);
@@ -177,10 +188,20 @@ const JS_일기삭제 = (event) => {
     // 일기목록에서 현재 일기번호 객체 제거
     일기목록.splice(일기번호, 1);
 
-    // 일기 삭제완료 알림
-    alert('삭제되었습니다.');
-
     // 일기목록 갱신, 홈페이지로 이동
     window.localStorage.setItem('일기목록', JSON.stringify(일기목록));
     window.location.href = './index.html';
+};
+
+// 모달 기능
+const JS_일기삭제기능 = () => {
+    window.scrollTo({ top: 0 });
+
+    document.getElementById('HTML_일기삭제모달').style = 'display: block;';
+    document.getElementById('HTML_바디').style = 'overflow: hidden;';
+};
+
+const JS_삭제취소기능 = () => {
+    document.getElementById('HTML_일기삭제모달').style = 'display: none;';
+    document.getElementById('HTML_바디').style = 'overflow: auto;';
 };
