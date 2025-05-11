@@ -4,15 +4,20 @@
     padding: 0;
 }
 
+html,
 body {
-    margin: 0 20px 40px;
+    width: 100%;
+    height: 100%;
 }
 
 .CSS_상세_레이아웃 {
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     gap: 64px;
     padding: 0 20px;
+    position: absolute;
 }
 
 /* 헤더 */
@@ -127,6 +132,18 @@ body {
     color: #333333;
 }
 
+.CSS_내용_복사영역 {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #1c1c1c;
+    margin-top: -1px;
+    cursor: pointer;
+}
+
 .CSS_상세_버튼그룹 {
     display: flex;
     flex-direction: row;
@@ -237,4 +254,238 @@ body {
 .CSS_회고_div {
     border-top: 1px solid #e4e4e4;
     margin: 12px 0;
+}
+
+.CSS_복사_토스트 {
+    width: 760px;
+    height: 56px;
+    border: none;
+    border-radius: 8px;
+    padding: 16px;
+    background-color: #000000;
+    opacity: 90%;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    color: #ffffff;
+    text-align: center;
+    position: fixed;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    animation-name: 토스트애니메이션;
+    animation-duration: 3s;
+    display: none;
+}
+
+@keyframes 토스트애니메이션 {
+    from {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+/* 일기 삭제 모달 */
+.CSS_일기삭제모달영역 {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    display: none;
+}
+
+.CSS_모달_배경 {
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    opacity: 50%;
+}
+
+.CSS_일기삭제모달 {
+    width: 480px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 24px;
+    padding: 24px;
+    gap: 40px;
+    background-color: #ffffff;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.CSS_일기삭제_내용 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.CSS_일기삭제_제목 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.CSS_일기삭제_설명 {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24px;
+    color: #333333;
+}
+
+.CSS_일기삭제_버튼영역 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 21px;
+}
+
+.CSS_취소_버튼 {
+    width: 104px;
+    height: 48px;
+    border: 1px solid #000000;
+    border-radius: 8px;
+    padding: 8px 10px;
+    background-color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+    color: #1c1c1c;
+    cursor: pointer;
+}
+
+.CSS_삭제_버튼 {
+    width: 104px;
+    height: 48px;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 10px;
+    background-color: #000000;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+@media (max-width: 360px) {
+    .CSS_상세_레이아웃 {
+        gap: 40px;
+    }
+
+    .CSS_상세_제목 {
+        font-size: 16px;
+    }
+
+    .CSS_상세_이미지 {
+        width: 24px;
+        height: 24px;
+    }
+
+    .CSS_상세_기분 {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .CSS_상세_작성일 {
+        font-size: 12px;
+        line-height: 16px;
+    }
+
+    .CSS_상세내용_제목 {
+        font-size: 14px;
+    }
+
+    .CSS_상세내용_내용 {
+        font-size: 14px;
+    }
+
+    .CSS_내용_복사영역 {
+        font-size: 12px;
+    }
+
+    .CSS_상세_버튼그룹 {
+        gap: 8px;
+    }
+
+    .CSS_상세_수정 {
+        padding: 8px 12px;
+        font-size: 12px;
+        line-height: 16px;
+    }
+
+    .CSS_상세_삭제 {
+        padding: 8px 12px;
+        font-size: 12px;
+        line-height: 16px;
+    }
+
+    .CSS_복사_토스트 {
+        width: 320px;
+        height: 44px;
+        padding: 12px 8px;
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .CSS_회고_제목 {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .CSS_회고_인풋창 {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    .CSS_회고_버튼 {
+        font-size: 16px;
+    }
+
+    .CSS_일기삭제모달 {
+        width: 320px;
+        height: 156px;
+        gap: 24px;
+    }
+
+    .CSS_일기삭제_내용 {
+        gap: 8px;
+    }
+
+    .CSS_일기삭제_제목 {
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .CSS_일기삭제_설명 {
+        font-size: 14px;
+        line-height: 16px;
+    }
+
+    .CSS_일기삭제_버튼영역 {
+        gap: 16px;
+    }
+
+    .CSS_취소_버튼 {
+        height: 40px;
+        padding: 8px 12px;
+        font-size: 16px;
+    }
+
+    .CSS_삭제_버튼 {
+        height: 40px;
+        padding: 8px 12px;
+        font-size: 16px;
+    }
 }
