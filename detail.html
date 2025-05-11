@@ -2,10 +2,11 @@
 <html lang="ko">
     <head>
         <title>일기 상세페이지</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="./css/detail.css" />
         <script src="./javascript/detail.js"></script>
     </head>
-    <body>
+    <body id="HTML_바디">
         <div class="CSS_상세_레이아웃">
             <!-- 헤더 -->
             <div class="CSS_상세_헤더">민지의 다이어리</div>
@@ -37,6 +38,12 @@
                             id="HTML_상세_내용"
                             class="CSS_상세내용_내용"
                         ></div>
+                        <div
+                            class="CSS_내용_복사영역"
+                            onclick="JS_내용복사기능()"
+                        >
+                            <div>내용 복사</div>
+                        </div>
                     </div>
                     <div class="CSS_상세_버튼그룹">
                         <button
@@ -47,7 +54,7 @@
                         </button>
                         <button
                             class="CSS_상세_삭제"
-                            onclick="JS_일기삭제(event)"
+                            onclick="JS_일기삭제기능()"
                         >
                             삭제
                         </button>
@@ -76,6 +83,30 @@
                     <div id="HTML_회고영역" class="CSS_회고_댓글영역">
                         <div id="HTML_회고"></div>
                     </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 토스트 애니메이션 -->
+        <div id="HTML_토스트" class="CSS_복사_토스트">
+            내용이 복사되었습니다.
+        </div>
+
+        <!-- 일기삭제 모달 -->
+        <div id="HTML_일기삭제모달" class="CSS_일기삭제모달영역">
+            <div class="CSS_모달_배경"></div>
+            <div class="CSS_일기삭제모달">
+                <div class="CSS_일기삭제_내용">
+                    <div class="CSS_일기삭제_제목">일기 삭제</div>
+                    <div class="CSS_일기삭제_설명">일기를 삭제 하시겠어요?</div>
+                </div>
+                <div class="CSS_일기삭제_버튼영역">
+                    <button class="CSS_취소_버튼" onclick="JS_삭제취소기능()">
+                        취소
+                    </button>
+                    <button class="CSS_삭제_버튼" onclick="JS_일기삭제()">
+                        삭제
+                    </button>
                 </div>
             </div>
         </div>
